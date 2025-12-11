@@ -1,0 +1,87 @@
+{
+  "projects": [
+    {
+      "name": "StoryboardAI",
+      "description": "A website I made where you can generate your own story, and visualise each scene.",
+      "image": "../images/projects/storyboard-ai.png",
+      "skills": [
+        "react",
+        "express",
+        "typescript",
+        "material-ui",
+        "generative ai",
+        "openai api",
+        "vitejs"
+      ],
+      "links": {
+        "youtube": "https://youtu.be/qH3FP28j-vQ",
+        "github": "https://github.com/zion-pulapakura/storyboard-ai"
+      }
+    },
+    {
+      "name": "LegalRAG",
+      "description": "A full-stack application designed to experiment with Retrieval-Augmented Generation, using OpenAI's API to answer questions based on a legal document.",
+      "image": "../images/projects/legal-rag.png",
+      "skills": [
+        "react",
+        "vitejs",
+        "express",
+        "typescript",
+        "material ui",
+        "retrieval augmented generation",
+        "openai api",
+        "langchain",
+        "chroma db"
+      ],
+      "links": {
+        "github": "https://github.com/zion-pulapakura/rag-with-legal-doc"
+      }
+    },
+    {
+      "name": "ChatterGPT",
+      "description": "A ChatGPT clone to test using the OpenAI API.",
+      "image": "../images/projects/chattergpt.png",
+      "skills": [
+        "react",
+        "express",
+        "typescript",
+        "chakra-ui",
+        "mongo db",
+        "mongoose",
+        "openai api",
+        "machine learning"
+      ],
+      "links": {
+        "github": "https://github.com/zion-pulapakura/storyboard-ai"
+      }
+    },
+    {
+      "name": "Platformer Game",
+      "description": "A platformer game where you control the player with your hands.",
+      "image": "../images/projects/platformer.png",
+      "skills": ["python", "pygame", "computer vision", "mediapipe", "opencv"],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=zAmvG3Iv8qo",
+        "github": "https://github.com/zion-pulapakura/platformer"
+      }
+    },
+    {
+      "name": "Restaurant Reviews",
+      "description": "Restaurant reviews webiste which uses NLP to grade the sentiment of the review.",
+      "image": "../images/projects/restaurant-reviews.png",
+      "skills": [
+        "react",
+        "express",
+        "typescript",
+        "natural language processing",
+        "sentiment analysis",
+        "nltk",
+        "fastapi",
+        "python"
+      ],
+      "links": {
+        "github": "https://github.com/zion-pulapakura/restaurant-reviews"
+      }
+    }
+  ]
+}

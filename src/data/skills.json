@@ -1,0 +1,41 @@
+{
+  "aiMl": [
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "OpenAI API",
+    "LangChain",
+    "Hugging Face",
+    "NLP",
+    "LLMs",
+    "GenAI",
+    "Mediapipe"
+  ],
+  "fullstack": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "REST APIs",
+    "Vite",
+    "Material UI",
+    "Tailwind CSS",
+    "Zustand",
+    "HTML",
+    "CSS"
+  ],
+  "infra": ["AWS", "Docker", "CI/CD", "Git", "AWS"],
+  "tools": [
+    "VS Code",
+    "Postman",
+    "Figma",
+    "Jira",
+    "Confluence",
+    "Slack",
+    "GitHub",
+    "Notion"
+  ]
+}

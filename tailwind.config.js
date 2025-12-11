@@ -8,6 +8,7 @@ export default {
         "green-accent": "#cdf382",
         "text-primary": "#E5E2F9",
         "dotted-line": "#87CEEB",
+        "card-dark": "#474747",
       },
     },
   },

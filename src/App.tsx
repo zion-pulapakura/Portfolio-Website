@@ -1,12 +1,11 @@
 import React from 'react';
 import LandingSection from './pages/LandingSection';
-import SkillsSection from './pages/SkillsSection';
 import ProjectsSection from './pages/ProjectsSection';
 import AboutSection from './pages/AboutSection';
 
 const App: React.FC = () => {
   const scrollToNext = () => {
-    const sections = ['landing', 'skills', 'projects', 'about'];
+    const sections = ['landing', 'projects', 'about'];
     const currentSection = sections.find((id) => {
       const element = document.getElementById(id);
       if (element) {
@@ -30,7 +29,6 @@ const App: React.FC = () => {
   return (
     <div className="w-full">
       <LandingSection onScrollToNext={scrollToNext} />
-      <SkillsSection />
       <ProjectsSection />
       <AboutSection />
     </div>
