@@ -92,7 +92,7 @@ const ProjectsSection: React.FC = () => {
 
         {/* Projects Title */}
         <h2 className="text-purple-primary text-5xl font-bold mb-8 relative inline-block">
-          Projects
+          PROJECTS
           <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-purple-primary"></span>
         </h2>
 

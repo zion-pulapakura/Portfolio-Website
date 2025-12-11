@@ -39,3 +39,23 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Bounce dance animation for landing page arrow */
+@keyframes bounce-dance {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-dance {
+  animation: bounce-dance 1.5s ease-in-out 2;
+}
