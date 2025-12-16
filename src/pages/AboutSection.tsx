@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Section from "../components/Section";
 
 const AboutSection: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.getElementById("about");
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
   const socialLinks = [
     {
       name: "GitHub",
@@ -82,26 +106,46 @@ const AboutSection: React.FC = () => {
           ></div>
 
           {/* About Me Title */}
-          <h2 className="text-green-accent text-5xl font-bold mb-8 relative inline-block">
+          <h2
+            className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
+              isVisible ? "animate-fade-in-up" : ""
+            }`}
+            style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+          >
             ABOUT ME
             <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-green-accent"></span>
           </h2>
 
           {/* About Me Content */}
           <div className="flex flex-col max-w-3xl">
-            <p className="text-text-primary text-xl leading-relaxed mb-4">
+            <p
+              className={`text-text-primary text-xl leading-relaxed mb-4 ${
+                isVisible ? "animate-fade-in-up" : ""
+              }`}
+              style={{ animationDelay: "0.2s", opacity: isVisible ? 1 : 0 }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <p className="text-text-primary text-xl leading-relaxed mb-4">
+            <p
+              className={`text-text-primary text-xl leading-relaxed mb-4 ${
+                isVisible ? "animate-fade-in-up" : ""
+              }`}
+              style={{ animationDelay: "0.3s", opacity: isVisible ? 1 : 0 }}
+            >
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
               cupidatat non proident, sunt in culpa qui officia deserunt mollit
               anim id est laborum.
             </p>
-            <p className="text-text-primary text-xl leading-relaxed">
+            <p
+              className={`text-text-primary text-xl leading-relaxed ${
+                isVisible ? "animate-fade-in-up" : ""
+              }`}
+              style={{ animationDelay: "0.4s", opacity: isVisible ? 1 : 0 }}
+            >
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
@@ -113,7 +157,12 @@ const AboutSection: React.FC = () => {
         {/* Right Section - 1/3 width, Green background */}
         <div className="w-1/3 relative flex flex-col pl-10 pr-10 py-20 z-10">
           {/* Contacts Title */}
-          <h2 className="text-purple-primary text-5xl font-bold mb-8 relative inline-block">
+          <h2
+            className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
+              isVisible ? "animate-fade-in-up" : ""
+            }`}
+            style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+          >
             CONTACTS
             <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-purple-primary"></span>
           </h2>
@@ -126,7 +175,13 @@ const AboutSection: React.FC = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-xl p-6 flex items-center gap-4 hover:opacity-90 transition-opacity border border-purple-primary/20 shadow-md"
+                className={`bg-white rounded-xl p-6 flex items-center gap-4 hover:opacity-90 transition-opacity border border-purple-primary/20 shadow-md ${
+                  isVisible ? "animate-fade-in-up" : ""
+                }`}
+                style={{
+                  animationDelay: `${0.2 + index * 0.1}s`,
+                  opacity: isVisible ? 1 : 0,
+                }}
               >
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 border-2 border-purple-primary">
                   {link.icon}

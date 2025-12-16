@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Section from "../components/Section";
 import SkillPill from "../components/SkillPill";
 import projectsData from "../data/projects.json";
@@ -45,6 +45,29 @@ const GitHubIcon: React.FC<{ className?: string }> = ({
 const ProjectsSection: React.FC = () => {
   const projects = projectsData.projects as Project[];
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.getElementById("projects");
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
 
   const getImageUrl = (imagePath: string) => {
     // Remove the "../" prefix if present and construct the path
@@ -81,17 +104,13 @@ const ProjectsSection: React.FC = () => {
             "linear-gradient(to right, #cdf382 0%, #cdf382 66.67%, #462dd5 66.67%, #462dd5 100%)",
         }}
       >
-        {/* Dotted vertical line on the left */}
-        <div
-          className="absolute left-8 top-0 bottom-0 w-px"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(to bottom, #462dd5 0, #462dd5 4px, transparent 4px, transparent 8px)",
-          }}
-        ></div>
-
         {/* Projects Title */}
-        <h2 className="text-purple-primary text-5xl font-bold mb-8 relative inline-block">
+        <h2
+          className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
+            isVisible ? "animate-fade-in-up" : ""
+          }`}
+          style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+        >
           PROJECTS
           <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-purple-primary"></span>
         </h2>
@@ -128,7 +147,13 @@ const ProjectsSection: React.FC = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-[500px] bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600"
+                  className={`flex-shrink-0 w-[500px] bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 ${
+                    isVisible ? "animate-fade-in-up" : ""
+                  }`}
+                  style={{
+                    animationDelay: `${0.2 + index * 0.1}s`,
+                    opacity: isVisible ? 1 : 0,
+                  }}
                 >
                   {/* Project Image */}
                   <div className="w-full h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
@@ -216,3 +241,4 @@ const ProjectsSection: React.FC = () => {
 };
 
 export default ProjectsSection;
+ 
