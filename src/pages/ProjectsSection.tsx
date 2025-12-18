@@ -2,17 +2,7 @@ import React, { useEffect, useState } from "react";
 import Section from "../components/Section";
 import ProjectsCarousel from "../components/ProjectsCarousel";
 import projectsData from "../data/projects.json";
-
-interface Project {
-  name: string;
-  description: string;
-  image: string;
-  skills: string[];
-  links: {
-    youtube?: string;
-    github?: string;
-  };
-}
+import { Project } from "../types";
 
 const ProjectsSection: React.FC = () => {
   const projects = projectsData.projects as Project[];

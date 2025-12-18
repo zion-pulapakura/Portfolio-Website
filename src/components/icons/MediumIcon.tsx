@@ -1,10 +1,7 @@
 import React from "react";
+import { IconProps } from "../../types";
 
-interface MediumIconProps {
-  className?: string;
-}
-
-const MediumIcon: React.FC<MediumIconProps> = ({ className = "w-5 h-5" }) => (
+const MediumIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     className={className}
     viewBox="0 0 24 24"

@@ -1,10 +1,7 @@
 import React from "react";
+import { IconProps } from "../../types";
 
-interface GitHubIconProps {
-  className?: string;
-}
-
-const GitHubIcon: React.FC<GitHubIconProps> = ({ className = "w-5 h-5" }) => (
+const GitHubIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     className={className}
     viewBox="0 0 24 24"

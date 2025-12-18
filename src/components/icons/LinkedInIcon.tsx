@@ -1,10 +1,7 @@
 import React from "react";
+import { IconProps } from "../../types";
 
-interface LinkedInIconProps {
-  className?: string;
-}
-
-const LinkedInIcon: React.FC<LinkedInIconProps> = ({
+const LinkedInIcon: React.FC<IconProps> = ({
   className = "w-5 h-5",
 }) => (
   <svg

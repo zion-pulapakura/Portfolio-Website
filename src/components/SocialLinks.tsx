@@ -3,16 +3,11 @@ import GitHubIcon from "./icons/GitHubIcon";
 import YouTubeIcon from "./icons/YouTubeIcon";
 import LinkedInIcon from "./icons/LinkedInIcon";
 import MediumIcon from "./icons/MediumIcon";
+import { SocialLink } from "../types";
 
 interface SocialLinksProps {
   className?: string;
   animationDelay?: string;
-}
-
-interface SocialLink {
-  name: string;
-  url: string;
-  icon: React.ReactNode;
 }
 
 const SocialLinks: React.FC<SocialLinksProps> = ({

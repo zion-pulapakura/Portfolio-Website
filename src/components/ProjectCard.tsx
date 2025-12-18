@@ -2,17 +2,7 @@ import React from "react";
 import SkillPill from "./SkillPill";
 import YouTubeIcon from "./icons/YouTubeIcon";
 import GitHubIcon from "./icons/GitHubIcon";
-
-interface Project {
-  name: string;
-  description: string;
-  image: string;
-  skills: string[];
-  links: {
-    youtube?: string;
-    github?: string;
-  };
-}
+import { Project } from "../types";
 
 interface ProjectCardProps {
   project: Project;

@@ -1,16 +1,6 @@
 import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
-
-interface Project {
-  name: string;
-  description: string;
-  image: string;
-  skills: string[];
-  links: {
-    youtube?: string;
-    github?: string;
-  };
-}
+import { Project } from "../types";
 
 interface ProjectsCarouselProps {
   projects: Project[];
