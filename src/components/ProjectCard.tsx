@@ -19,12 +19,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex-shrink-0 w-[500px] bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 ${
-        isVisible ? "animate-fade-in-up" : ""
+      className={`flex-shrink-0 w-[500px] bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 shadow-sm ${
+        isVisible ? "animate-slide-in-left" : ""
       }`}
       style={{
         animationDelay: `${animationDelay}s`,
-        opacity: isVisible ? 1 : 0,
+        opacity: isVisible ? undefined : 0,
       }}
     >
       <div className="w-full h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
@@ -78,4 +78,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 };
 
 export default ProjectCard;
-

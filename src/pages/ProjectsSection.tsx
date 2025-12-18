@@ -57,7 +57,7 @@ const ProjectsSection: React.FC = () => {
           style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
         >
           PROJECTS
-          <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-purple-primary"></span>
+          <span className="absolute -bottom-2 left-0 w-1/4 h-1 bg-purple-primary"></span>
         </h2>
 
         <ProjectsCarousel

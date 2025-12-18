@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Project } from "../types";
 
@@ -14,6 +14,23 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
   getImageUrl,
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [showArrows, setShowArrows] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      const lastCardDelay = 0.2 + (projects.length - 1) * 0.1;
+      const animationDuration = 0.8;
+      const totalAnimationTime = (lastCardDelay + animationDuration) * 1000;
+
+      const timer = setTimeout(() => {
+        setShowArrows(true);
+      }, totalAnimationTime);
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowArrows(false);
+    }
+  }, [isVisible, projects.length]);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -31,7 +48,9 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
     <div className="relative">
       <button
         onClick={scrollLeft}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-30 w-12 h-12 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg"
+        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-30 w-12 h-12 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg ${
+          showArrows ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         aria-label="Scroll left"
       >
         <svg
@@ -68,11 +87,13 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
 
       <button
         onClick={scrollRight}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-12 h-12 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg"
+        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-12 h-12 rounded-full bg-green-accent flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg ${
+          showArrows ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         aria-label="Scroll right"
       >
         <svg
-          className="w-6 h-6 text-white"
+          className="w-6 h-6 text-gray-800"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
