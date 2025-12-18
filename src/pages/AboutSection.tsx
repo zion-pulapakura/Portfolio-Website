@@ -55,10 +55,11 @@ const AboutSection: React.FC = () => {
               }`}
               style={{ animationDelay: "0.2s", opacity: isVisible ? 1 : 0 }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              I'm Zion Pulapakura, an AI and software engineer based in
+              Melbourne, Australia. I'm passionate about building intelligent,
+              engaging software that blends modern machine learning, computer
+              vision, and interactive application development to solve
+              real-world problems and explore new creative possibilities.
             </p>
             <p
               className={`text-text-primary text-xl leading-relaxed mb-4 ${
@@ -66,10 +67,12 @@ const AboutSection: React.FC = () => {
               }`}
               style={{ animationDelay: "0.3s", opacity: isVisible ? 1 : 0 }}
             >
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
+              My journey in technology started when I was 12, when I first got
+              into Python and Javascript. This came from a drive to make ideas
+              tangible, which eventually led to all types of exciting projects
+              for me: from experimenting with game mechanics to developing
+              AI-powered applications that respond to real-time data like hand
+              gestures.
             </p>
             <p
               className={`text-text-primary text-xl leading-relaxed ${
@@ -77,10 +80,10 @@ const AboutSection: React.FC = () => {
               }`}
               style={{ animationDelay: "0.4s", opacity: isVisible ? 1 : 0 }}
             >
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+              I enjoy mastering diverse parts of the stack, whether that's
+              working deeply with Python for AI and computer vision, leveraging
+              full-stack technologies, or navigating cloud infrastructure to
+              deploy scalable solutions.
             </p>
           </div>
         </div>
