@@ -36,7 +36,7 @@ const ScrollArrow: React.FC = () => {
   return (
     <button
       onClick={scrollToNext}
-      className={`fixed bottom-10 right-10 w-14 h-14 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer z-20 ${
+      className={`fixed bottom-10 right-10 w-14 h-14 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer z-20 border-2 border-white shadow-lg ${
         isLoaded ? "animate-bounce-dance" : ""
       }`}
       aria-label="Scroll to next section"
