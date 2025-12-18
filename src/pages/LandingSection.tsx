@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Section from "../components/Section";
 import SocialLinks from "../components/SocialLinks";
 import meImage from "../images/me.png";
 
-interface LandingSectionProps {
-  onScrollToNext: () => void;
-}
-
-const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
+const LandingSection: React.FC = () => {
   return (
     <Section
       id="landing"
@@ -58,28 +45,6 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
 
       <div className="w-1/3 relative flex items-center justify-center z-10">
         <SocialLinks animationDelay="0.3s" />
-
-        <button
-          onClick={onScrollToNext}
-          className={`absolute bottom-10 right-10 w-14 h-14 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer z-20 ${
-            isLoaded ? "animate-bounce-dance" : ""
-          }`}
-          aria-label="Scroll to next section"
-        >
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </button>
       </div>
 
       <div
