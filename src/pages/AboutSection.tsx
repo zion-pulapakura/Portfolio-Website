@@ -94,9 +94,7 @@ const AboutSection: React.FC = () => {
             "linear-gradient(to right, #462dd5 0%, #462dd5 66.67%, #cdf382 66.67%, #cdf382 100%)",
         }}
       >
-        {/* Left Section - 2/3 width, Purple background */}
         <div className="w-2/3 relative flex flex-col pl-20 pr-10 py-20 z-10">
-          {/* Dotted vertical line on the left */}
           <div
             className="absolute left-8 top-0 bottom-0 w-px"
             style={{
@@ -105,7 +103,6 @@ const AboutSection: React.FC = () => {
             }}
           ></div>
 
-          {/* About Me Title */}
           <h2
             className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
               isVisible ? "animate-fade-in-up" : ""
@@ -116,7 +113,6 @@ const AboutSection: React.FC = () => {
             <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-green-accent"></span>
           </h2>
 
-          {/* About Me Content */}
           <div className="flex flex-col max-w-3xl">
             <p
               className={`text-text-primary text-xl leading-relaxed mb-4 ${
@@ -154,9 +150,7 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Section - 1/3 width, Green background */}
         <div className="w-1/3 relative flex flex-col pl-10 pr-10 py-20 z-10">
-          {/* Contacts Title */}
           <h2
             className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
               isVisible ? "animate-fade-in-up" : ""
@@ -167,7 +161,6 @@ const AboutSection: React.FC = () => {
             <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-purple-primary"></span>
           </h2>
 
-          {/* Contact Cards */}
           <div className="grid grid-cols-2 gap-4">
             {socialLinks.map((link, index) => (
               <a

@@ -29,18 +29,15 @@ body {
   font-family: "Caveat", cursive;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Bounce dance animation for landing page arrow */
 @keyframes bounce-dance {
   0%, 100% {
     transform: translateY(0);
@@ -60,7 +57,6 @@ body {
   animation: bounce-dance 1.5s ease-in-out 2;
 }
 
-/* On-load animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;

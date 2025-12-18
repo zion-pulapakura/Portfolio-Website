@@ -11,7 +11,6 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Trigger animation after a short delay
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 500);
@@ -20,9 +19,7 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
 
   return (
     <Section id="landing" className="flex flex-row relative">
-      {/* Left Section - 2/3 width, Purple background */}
       <div className="w-2/3 bg-purple-primary relative flex flex-col justify-center pl-20 pr-10 z-10">
-        {/* Dotted vertical line on the left */}
         <div
           className="absolute left-8 top-0 bottom-0 w-px"
           style={{
@@ -31,7 +28,6 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
           }}
         ></div>
 
-        {/* Logo at the top - aligned with AI ENGINEER */}
         <h2
           className="absolute top-10 left-20 font-logo text-green-accent text-3xl font-bold z-20 animate-fade-in"
           style={{ animationDelay: "0.1s", opacity: 0 }}
@@ -39,7 +35,6 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
           zion pulapakura
         </h2>
 
-        {/* Main content */}
         <div className="flex flex-col">
           <h1
             className="text-green-accent text-9xl font-bold leading-tight animate-fade-in-up"
@@ -57,12 +52,9 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
         </div>
       </div>
 
-      {/* Right Section - 1/3 width, Green background */}
       <div className="w-1/3 bg-green-accent relative flex items-center justify-center z-10">
-        {/* Social Media Links */}
         <SocialLinks animationDelay="0.3s" />
 
-        {/* Scroll arrow button in bottom right */}
         <button
           onClick={onScrollToNext}
           className={`absolute bottom-10 right-10 w-14 h-14 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer z-20 ${
@@ -86,12 +78,10 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
         </button>
       </div>
 
-      {/* Image positioned in between the two backgrounds, centered vertically */}
       <div
         className="absolute top-1/2 left-2/3 -translate-y-1/2 -translate-x-1/2 z-20 animate-fade-in"
         style={{ animationDelay: "0.5s", opacity: 0 }}
       >
-        {/* White rectangle outline offset by 20px down and right */}
         <div
           className="absolute w-80 h-96 border-4 border-white"
           style={{
@@ -99,7 +89,6 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
             left: "20px",
           }}
         ></div>
-        {/* Actual image */}
         <img
           src={meImage}
           alt="Zion Pulapakura"

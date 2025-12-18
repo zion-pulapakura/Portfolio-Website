@@ -16,10 +16,8 @@ const SkillBox: React.FC<SkillBoxProps> = ({ title, skills, emoji }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-primary/5 to-green-accent/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
       
-      {/* Title overlay */}
       <div
         className={`absolute inset-0 flex flex-col items-center justify-center transition-transform duration-500 ease-in-out ${
           isHovered ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"
@@ -29,7 +27,6 @@ const SkillBox: React.FC<SkillBoxProps> = ({ title, skills, emoji }) => {
         <h3 className="text-white text-xl md:text-2xl font-bold">{title}</h3>
       </div>
 
-      {/* Skills pills - slides in from right */}
       <div
         className={`absolute inset-0 flex flex-wrap items-center justify-center gap-3 p-6 transition-transform duration-500 ease-in-out ${
           isHovered ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"

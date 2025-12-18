@@ -14,7 +14,6 @@ interface Project {
   };
 }
 
-// YouTube Icon SVG Component
 const YouTubeIcon: React.FC<{ className?: string }> = ({
   className = "w-5 h-5",
 }) => (
@@ -28,7 +27,6 @@ const YouTubeIcon: React.FC<{ className?: string }> = ({
   </svg>
 );
 
-// GitHub Icon SVG Component
 const GitHubIcon: React.FC<{ className?: string }> = ({
   className = "w-5 h-5",
 }) => (
@@ -70,15 +68,12 @@ const ProjectsSection: React.FC = () => {
   }, []);
 
   const getImageUrl = (imagePath: string) => {
-    // Remove the "../" prefix if present and construct the path
     const cleanPath = imagePath.startsWith("../")
       ? imagePath.slice(3)
       : imagePath;
     try {
-      // In Vite, we can use new URL with the path relative to src
       return new URL(`../${cleanPath}`, import.meta.url).href;
     } catch {
-      // Fallback: try to use the path as-is
       return imagePath;
     }
   };
@@ -104,7 +99,6 @@ const ProjectsSection: React.FC = () => {
             "linear-gradient(to right, #cdf382 0%, #cdf382 66.67%, #462dd5 66.67%, #462dd5 100%)",
         }}
       >
-        {/* Projects Title */}
         <h2
           className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
             isVisible ? "animate-fade-in-up" : ""
@@ -115,9 +109,7 @@ const ProjectsSection: React.FC = () => {
           <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-purple-primary"></span>
         </h2>
 
-        {/* Carousel Container with Arrows */}
         <div className="relative">
-          {/* Left Arrow */}
           <button
             onClick={scrollLeft}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-30 w-12 h-12 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg"
@@ -138,7 +130,6 @@ const ProjectsSection: React.FC = () => {
             </svg>
           </button>
 
-          {/* Horizontal Scrolling Carousel */}
           <div
             ref={carouselRef}
             className="overflow-x-auto overflow-y-hidden pb-6 scrollbar-hide scroll-smooth w-full"
@@ -155,35 +146,29 @@ const ProjectsSection: React.FC = () => {
                     opacity: isVisible ? 1 : 0,
                   }}
                 >
-                  {/* Project Image */}
                   <div className="w-full h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
                     <img
                       src={getImageUrl(project.image)}
                       alt={project.name}
                       className="w-full h-full object-cover"
                     />
-                  </div>
+                    </div>
 
-                  {/* Project Content */}
                   <div className="p-6 flex flex-col flex-grow">
-                    {/* Title */}
                     <h3 className="text-white text-xl font-bold mb-2">
                       {project.name}
                     </h3>
 
-                    {/* Description */}
                     <p className="text-text-primary text-sm mb-4 flex-grow">
                       {project.description}
                     </p>
 
-                    {/* Skills */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.skills.map((skill, skillIndex) => (
                         <SkillPill key={skillIndex} skill={skill} />
                       ))}
                     </div>
 
-                    {/* Link Circles */}
                     <div className="flex gap-3 justify-end">
                       {project.links.youtube && (
                         <a
@@ -214,7 +199,6 @@ const ProjectsSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Arrow */}
           <button
             onClick={scrollRight}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-12 h-12 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg"
