@@ -50,15 +50,17 @@ const ProjectsSection: React.FC = () => {
             "linear-gradient(to right, #cdf382 0%, #cdf382 66.67%, #462dd5 66.67%, #462dd5 100%)",
         }}
       >
-        <h2
-          className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
-            isVisible ? "animate-fade-in-up" : ""
-          }`}
-          style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
-        >
-          PROJECTS
-          <span className="absolute -bottom-2 left-0 w-1/4 h-1 bg-purple-primary"></span>
-        </h2>
+        <div>
+          <h2
+            className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
+              isVisible ? "animate-fade-in-up" : ""
+            }`}
+            style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+          >
+            PROJECTS
+            <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-purple-primary"></span>
+          </h2>
+        </div>
 
         <ProjectsCarousel
           projects={projects}

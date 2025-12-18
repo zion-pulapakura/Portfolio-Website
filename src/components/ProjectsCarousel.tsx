@@ -111,4 +111,3 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
 };
 
 export default ProjectsCarousel;
-
