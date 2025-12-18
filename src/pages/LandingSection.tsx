@@ -18,8 +18,12 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
   }, []);
 
   return (
-    <Section id="landing" className="flex flex-row relative">
-      <div className="w-2/3 bg-purple-primary relative flex flex-col justify-center pl-20 pr-10 z-10">
+    <Section
+      id="landing"
+      className="flex flex-row relative"
+      background="purple-green"
+    >
+      <div className="w-2/3 relative flex flex-col justify-center pl-20 pr-10 z-10">
         <div
           className="absolute left-8 top-0 bottom-0 w-px"
           style={{
@@ -52,7 +56,7 @@ const LandingSection: React.FC<LandingSectionProps> = ({ onScrollToNext }) => {
         </div>
       </div>
 
-      <div className="w-1/3 bg-green-accent relative flex items-center justify-center z-10">
+      <div className="w-1/3 relative flex items-center justify-center z-10">
         <SocialLinks animationDelay="0.3s" />
 
         <button

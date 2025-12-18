@@ -42,14 +42,8 @@ const ProjectsSection: React.FC = () => {
   };
 
   return (
-    <Section id="projects" className="relative">
-      <div
-        className="relative flex flex-col pl-20 pr-10 py-20 w-full min-h-screen"
-        style={{
-          background:
-            "linear-gradient(to right, #cdf382 0%, #cdf382 66.67%, #462dd5 66.67%, #462dd5 100%)",
-        }}
-      >
+    <Section id="projects" className="relative" background="green-purple">
+      <div className="relative flex flex-col pl-20 pr-10 py-20 w-full min-h-screen">
         <div>
           <h2
             className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
