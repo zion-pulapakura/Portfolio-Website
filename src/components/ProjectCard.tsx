@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import SkillPill from "./SkillPill";
 import YouTubeIcon from "./icons/YouTubeIcon";
 import GitHubIcon from "./icons/GitHubIcon";
@@ -17,21 +17,47 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   isVisible,
   animationDelay,
 }) => {
+  const imageRef = useRef<HTMLImageElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [imageWidth, setImageWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const img = imageRef.current;
+    if (img) {
+      const updateWidth = () => {
+        if (img.offsetWidth > 0) {
+          setImageWidth(img.offsetWidth);
+        }
+      };
+
+      if (img.complete) {
+        updateWidth();
+      } else {
+        img.onload = updateWidth;
+      }
+    }
+  }, [imageUrl]);
+
   return (
     <div
-      className={`flex-shrink-0 w-[500px] bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 shadow-sm ${
+      ref={cardRef}
+      className={`flex-shrink-0 bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 shadow-sm ${
         isVisible ? "animate-slide-in-left" : ""
       }`}
       style={{
         animationDelay: `${animationDelay}s`,
         opacity: isVisible ? undefined : 0,
+        minHeight: "500px",
+        width: imageWidth ? `${imageWidth}px` : "auto",
       }}
     >
-      <div className="w-full h-48 bg-gray-300 flex items-center justify-center overflow-hidden">
+      <div className="h-80 bg-gray-300 flex items-center justify-center overflow-hidden">
         <img
+          ref={imageRef}
           src={imageUrl}
           alt={project.name}
-          className="w-full h-full object-cover"
+          className="h-full w-auto object-contain"
+          style={{ display: "block" }}
         />
       </div>
 
