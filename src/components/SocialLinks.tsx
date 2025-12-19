@@ -1,8 +1,5 @@
 import React from "react";
-import GitHubIcon from "./icons/GitHubIcon";
-import YouTubeIcon from "./icons/YouTubeIcon";
-import LinkedInIcon from "./icons/LinkedInIcon";
-import MediumIcon from "./icons/MediumIcon";
+import { FaGithub, FaYoutube, FaLinkedin, FaMedium } from "react-icons/fa6";
 import { SocialLink } from "../types";
 
 interface SocialLinksProps {
@@ -18,22 +15,22 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
     {
       name: "GitHub",
       url: "https://github.com/zion-pulapakura",
-      icon: <GitHubIcon className="w-5 h-5 text-gray-800" />,
+      icon: <FaGithub className="w-5 h-5 text-gray-800" />,
     },
     {
       name: "YouTube",
       url: "https://youtube.com/@zion-pulapakura",
-      icon: <YouTubeIcon className="w-5 h-5 text-red-600" />,
+      icon: <FaYoutube className="w-5 h-5 text-red-600" />,
     },
     {
       name: "LinkedIn",
       url: "https://linkedin.com/in/zion-pulapakura",
-      icon: <LinkedInIcon className="w-5 h-5 text-blue-600" />,
+      icon: <FaLinkedin className="w-5 h-5 text-blue-600" />,
     },
     {
       name: "Medium",
       url: "https://medium.com/@zion-pulapakura",
-      icon: <MediumIcon className="w-5 h-5 text-gray-800" />,
+      icon: <FaMedium className="w-5 h-5 text-gray-800" />,
     },
   ];
 

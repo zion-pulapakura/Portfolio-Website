@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import SkillPill from "./SkillPill";
-import YouTubeIcon from "./icons/YouTubeIcon";
-import GitHubIcon from "./icons/GitHubIcon";
+import { FaGithub, FaYoutube } from "react-icons/fa6";
 import { Project } from "../types";
 
 interface ProjectCardProps {
@@ -83,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label={`View ${project.name} on YouTube`}
             >
-              <YouTubeIcon className="w-5 h-5 text-red-600" />
+              <FaYoutube className="w-5 h-5 text-red-600" />
             </a>
           )}
           {project.links.github && (
@@ -94,7 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label={`View ${project.name} on GitHub`}
             >
-              <GitHubIcon className="w-5 h-5 text-gray-800" />
+              <FaGithub className="w-5 h-5 text-gray-800" />
             </a>
           )}
         </div>
