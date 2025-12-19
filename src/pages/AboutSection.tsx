@@ -38,15 +38,17 @@ const AboutSection: React.FC = () => {
             }}
           ></div>
 
-          <h2
-            className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
-              isVisible ? "animate-fade-in-up" : ""
-            }`}
-            style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
-          >
-            ABOUT ME
-            <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-green-accent"></span>
-          </h2>
+          <div>
+            <h2
+              className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
+                isVisible ? "animate-fade-in-up" : ""
+              }`}
+              style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+            >
+              ABOUT ME
+              <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-green-accent"></span>
+            </h2>
+          </div>
 
           <div className="flex flex-col max-w-3xl">
             <p

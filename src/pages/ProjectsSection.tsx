@@ -47,9 +47,9 @@ const ProjectsSection: React.FC = () => {
         <div>
           <h2
             className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
-              isVisible ? "animate-fade-in-up" : ""
+              isVisible ? "animate-slide-in-down" : ""
             }`}
-            style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+            style={{ animationDelay: "0s" }}
           >
             PROJECTS
             <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-purple-primary"></span>

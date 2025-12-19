@@ -18,7 +18,7 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
 
   useEffect(() => {
     if (isVisible) {
-      const lastCardDelay = 0.2 + (projects.length - 1) * 0.1;
+      const lastCardDelay = 0.8 + (projects.length - 1) * 0.1;
       const animationDuration = 0.8;
       const totalAnimationTime = (lastCardDelay + animationDuration) * 1000;
 
@@ -79,7 +79,7 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
               project={project}
               imageUrl={getImageUrl(project.image)}
               isVisible={isVisible}
-              animationDelay={0.2 + index * 0.1}
+              animationDelay={0.8 + index * 0.1}
             />
           ))}
         </div>

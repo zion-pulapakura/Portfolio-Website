@@ -46,7 +46,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       }`}
       style={{
         animationDelay: `${animationDelay}s`,
-        opacity: isVisible ? undefined : 0,
+        opacity: isVisible ? 0 : 0,
         minHeight: "500px",
         width: imageWidth ? `${imageWidth}px` : "auto",
       }}
