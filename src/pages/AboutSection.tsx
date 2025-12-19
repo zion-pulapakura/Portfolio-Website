@@ -30,14 +30,6 @@ const AboutSection: React.FC = () => {
     <Section id="about" className="relative" background="purple-green">
       <div className="relative flex flex-row w-full min-h-screen">
         <div className="w-full relative flex flex-col pl-20 pr-10 py-20 z-10">
-          <div
-            className="absolute left-8 top-0 bottom-0 w-px"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(to bottom, #87CEEB 0, #87CEEB 4px, transparent 4px, transparent 8px)",
-            }}
-          ></div>
-
           <div>
             <h2
               className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${

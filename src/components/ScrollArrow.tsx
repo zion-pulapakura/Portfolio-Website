@@ -26,7 +26,7 @@ const ScrollArrow: React.FC = () => {
   }, []);
 
   const scrollToNext = () => {
-    const sections = ["landing", "projects", "about"];
+    const sections = ["landing", "projects", "skills", "about"];
     const nextIndex = sections.indexOf(currentSection) + 1;
     const nextSection = document.getElementById(sections[nextIndex]);
     if (nextSection) {

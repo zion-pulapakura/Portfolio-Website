@@ -10,14 +10,6 @@ const LandingSection: React.FC = () => {
       background="purple-green"
     >
       <div className="w-2/3 relative flex flex-col justify-center pl-20 pr-10 z-10">
-        <div
-          className="absolute left-8 top-0 bottom-0 w-px"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(to bottom, #87CEEB 0, #87CEEB 4px, transparent 4px, transparent 8px)",
-          }}
-        ></div>
-
         <h2
           className="absolute top-10 left-20 font-logo text-green-accent text-3xl font-bold z-20 animate-fade-in"
           style={{ animationDelay: "0.1s", opacity: 0 }}
