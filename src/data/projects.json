@@ -19,6 +19,16 @@
       }
     },
     {
+      "name": "Platformer Game",
+      "description": "A platformer game where you control the player with your hands.",
+      "image": "/images/projects/platformer.png",
+      "skills": ["python", "pygame", "computer vision", "mediapipe", "opencv"],
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=zAmvG3Iv8qo",
+        "github": "https://github.com/zion-pulapakura/platformer"
+      }
+    },
+    {
       "name": "LegalRAG",
       "description": "A full-stack application designed to experiment with Retrieval-Augmented Generation, using OpenAI's API to answer questions based on a legal document.",
       "image": "/images/projects/legal-rag.png",
@@ -53,16 +63,6 @@
       ],
       "links": {
         "github": "https://github.com/zion-pulapakura/storyboard-ai"
-      }
-    },
-    {
-      "name": "Platformer Game",
-      "description": "A platformer game where you control the player with your hands.",
-      "image": "/images/projects/platformer.png",
-      "skills": ["python", "pygame", "computer vision", "mediapipe", "opencv"],
-      "links": {
-        "youtube": "https://www.youtube.com/watch?v=zAmvG3Iv8qo",
-        "github": "https://github.com/zion-pulapakura/platformer"
       }
     },
     {
