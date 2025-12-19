@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
   }, []);
 
   return (
-    <Section id="about" className="relative" background="purple-green">
+    <Section id="about" className="relative" bgType="purple-green">
       <div className="relative flex flex-row w-full min-h-screen">
         <div className="w-full relative flex flex-col pl-20 pr-10 py-20 z-10">
           <div>

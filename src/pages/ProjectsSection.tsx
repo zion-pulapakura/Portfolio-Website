@@ -35,7 +35,7 @@ const ProjectsSection: React.FC = () => {
   };
 
   return (
-    <Section id="projects" className="relative" background="green-purple">
+    <Section id="projects" className="relative" bgType="green-purple">
       <div className="relative flex flex-col pl-20 pr-10 py-20 w-full min-h-screen">
         <div>
           <h2

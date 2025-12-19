@@ -1,15 +1,32 @@
 import React from "react";
 import Section from "../components/Section";
 import SocialLinks from "../components/SocialLinks";
+import { getColor } from "../utils/getColor";
 
 const LandingSection: React.FC = () => {
+  const { leftSideColor } = getColor("purple-green");
+
   return (
     <Section
       id="landing"
       className="flex flex-row relative"
-      background="purple-green"
+      bgType="purple-green"
     >
       <div className="w-2/3 relative flex flex-col justify-center pl-20 pr-10 z-10">
+        {/* Three horizontal lines behind logo (extending from left side) */}
+        <div
+          className="absolute top-10 left-0 w-96 h-px z-0"
+          style={{ backgroundColor: leftSideColor }}
+        ></div>
+        <div
+          className="absolute top-16 left-0 w-80 h-px z-0"
+          style={{ backgroundColor: leftSideColor }}
+        ></div>
+        <div
+          className="absolute top-[88px] left-0 w-72 h-px z-0"
+          style={{ backgroundColor: leftSideColor }}
+        ></div>
+
         <h2
           className="absolute top-10 left-20 font-logo text-green-accent text-3xl font-bold z-20 animate-fade-in"
           style={{ animationDelay: "0.1s", opacity: 0 }}

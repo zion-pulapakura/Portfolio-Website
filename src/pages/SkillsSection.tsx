@@ -27,7 +27,7 @@ const SkillsSection: React.FC = () => {
   }, []);
 
   return (
-    <Section id="skills" className="relative" background="purple-green">
+    <Section id="skills" className="relative" bgType="purple-green">
       <div className="relative flex flex-col pl-20 pr-10 py-20 w-full min-h-screen">
         <div>
           <h2
@@ -46,4 +46,3 @@ const SkillsSection: React.FC = () => {
 };
 
 export default SkillsSection;
-

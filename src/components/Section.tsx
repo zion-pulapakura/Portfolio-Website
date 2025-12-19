@@ -5,58 +5,55 @@ interface SectionProps {
   id: string;
   children: React.ReactNode;
   className?: string;
-  background?: BackgroundType;
+  bgType?: BackgroundType;
 }
 
 const Section: React.FC<SectionProps> = ({
   id,
   children,
   className = "",
-  background,
+  bgType,
 }) => {
-  const colors = getColor(background);
+  const { background, leftSideColor, rightSideColor } = getColor(bgType);
 
   return (
     <section
       id={id}
       className={`min-h-screen w-full relative overflow-hidden ${className}`}
-      style={{ background: colors.background }}
+      style={{ background }}
     >
       <div className="absolute inset-0 pointer-events-none">
+        {/* Large left side circle */}
         <div
           className="absolute bottom-32 left-32 w-48 h-48 rounded-full border"
-          style={{ borderColor: colors.leftSideColor }}
-        ></div>
+          style={{ borderColor: leftSideColor }}
+        />
+
+        {/* Small left side circle */}
         <div
           className="absolute bottom-20 left-20 w-24 h-24 rounded-full border"
-          style={{ borderColor: colors.leftSideColor }}
-        ></div>
+          style={{ borderColor: leftSideColor }}
+        />
 
-        <div
-          className="absolute top-[38%] right-0 w-96 h-px"
-          style={{ backgroundColor: colors.rightSideColor }}
-        ></div>
-        <div
-          className="absolute top-[40%] right-0 w-80 h-px"
-          style={{ backgroundColor: colors.rightSideColor }}
-        ></div>
-        <div
-          className="absolute top-[42%] right-0 w-72 h-px"
-          style={{ backgroundColor: colors.rightSideColor }}
-        ></div>
-
+        {/* Small dot near left side circles */}
         <div
           className="absolute bottom-60 left-80 w-2 h-2 rounded-full"
-          style={{ backgroundColor: colors.leftSideColor }}
-        ></div>
+          style={{ backgroundColor: leftSideColor }}
+        />
 
+        {/* Three vertical lines on right side (at 38%, 40%, 42% from top) */}
         <div
-          className="absolute left-8 top-0 bottom-0 w-px"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(to bottom, #87CEEB 0, #87CEEB 4px, transparent 4px, transparent 8px)",
-          }}
-        ></div>
+          className="absolute top-[42%] right-8 w-[2px] h-72 z-10"
+          style={{ backgroundColor: rightSideColor }}
+        />
+        <div
+          className="absolute top-[40%] right-16 w-[2px] h-80 z-10"
+          style={{ backgroundColor: rightSideColor }}
+        />
+        <div
+          className="absolute top-[42%] right-24 w-[2px] h-72 z-10"
+          style={{ backgroundColor: rightSideColor }}
+        />
       </div>
       {children}
     </section>
