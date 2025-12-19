@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "../components/Section";
 import SocialLinks from "../components/SocialLinks";
-import meImage from "../images/me.png";
 
 const LandingSection: React.FC = () => {
   return (
@@ -59,7 +58,7 @@ const LandingSection: React.FC = () => {
           }}
         ></div>
         <img
-          src={meImage}
+          src="/images/me.png"
           alt="Zion Pulapakura"
           className="w-80 h-96 object-cover relative z-10"
         />

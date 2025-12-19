@@ -31,14 +31,7 @@ const ProjectsSection: React.FC = () => {
   }, []);
 
   const getImageUrl = (imagePath: string) => {
-    const cleanPath = imagePath.startsWith("../")
-      ? imagePath.slice(3)
-      : imagePath;
-    try {
-      return new URL(`../${cleanPath}`, import.meta.url).href;
-    } catch {
-      return imagePath;
-    }
+    return imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
   };
 
   return (
