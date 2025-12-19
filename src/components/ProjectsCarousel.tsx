@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
+import CarouselArrow from "./CarouselArrow";
 import { Project } from "../types";
 
 interface ProjectsCarouselProps {
@@ -46,27 +47,7 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
 
   return (
     <div className="relative">
-      <button
-        onClick={scrollLeft}
-        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-30 w-12 h-12 rounded-full bg-purple-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg ${
-          showArrows ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        aria-label="Scroll left"
-      >
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
+      <CarouselArrow direction="left" onClick={scrollLeft} show={showArrows} />
 
       <div
         ref={carouselRef}
@@ -85,27 +66,11 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({
         </div>
       </div>
 
-      <button
+      <CarouselArrow
+        direction="right"
         onClick={scrollRight}
-        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-30 w-12 h-12 rounded-full bg-green-accent flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer shadow-lg ${
-          showArrows ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        aria-label="Scroll right"
-      >
-        <svg
-          className="w-6 h-6 text-gray-800"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
+        show={showArrows}
+      />
     </div>
   );
 };
