@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaArrowDown } from "react-icons/fa6";
 
 const ScrollArrow: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -41,19 +42,7 @@ const ScrollArrow: React.FC = () => {
       }`}
       aria-label="Scroll to next section"
     >
-      <svg
-        className="w-6 h-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"
-        />
-      </svg>
+      <FaArrowDown className="w-6 h-6 text-white" />
     </button>
   );
 };
