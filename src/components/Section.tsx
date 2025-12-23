@@ -22,7 +22,7 @@ const Section: React.FC<SectionProps> = ({
       className={`min-h-screen w-full relative overflow-hidden ${className}`}
       style={{ background }}
     >
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-0">
         {/* Large left side circle */}
         <div
           className="absolute bottom-32 left-32 w-48 h-48 rounded-full border"
@@ -41,17 +41,17 @@ const Section: React.FC<SectionProps> = ({
           style={{ backgroundColor: leftSideColor }}
         />
 
-        {/* Three vertical lines on right side (at 38%, 40%, 42% from top) */}
+        {/* Three horizontal lines on right side */}
         <div
-          className="absolute top-[42%] right-8 w-[2px] h-72 z-10"
+          className="absolute top-[12%] right-0 h-[2px] w-36"
           style={{ backgroundColor: rightSideColor }}
         />
         <div
-          className="absolute top-[40%] right-16 w-[2px] h-80 z-10"
+          className="absolute top-[14%] right-0 h-[2px] w-48"
           style={{ backgroundColor: rightSideColor }}
         />
         <div
-          className="absolute top-[42%] right-24 w-[2px] h-72 z-10"
+          className="absolute top-[16%] right-0 h-[2px] w-36"
           style={{ backgroundColor: rightSideColor }}
         />
       </div>

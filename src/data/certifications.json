@@ -1,0 +1,18 @@
+{
+  "certifications": [
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2024",
+      "image": "/images/aws-cert.png",
+      "description": "Foundational cloud knowledge and AWS services"
+    },
+    {
+      "title": "IBM AI Engineering",
+      "issuer": "IBM",
+      "date": "2024",
+      "image": "/images/ibm-cert.png",
+      "description": "Machine learning and deep learning fundamentals"
+    }
+  ]
+}

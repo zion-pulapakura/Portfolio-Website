@@ -77,13 +77,14 @@ const AboutSection: React.FC = () => {
               I enjoy mastering diverse parts of the stack, whether that's
               working deeply with Python for AI and computer vision, leveraging
               full-stack technologies, or navigating cloud infrastructure to
-              deploy scalable solutions.
+              deploy scalable solutions. 
             </p>
           </div>
         </div>
       </div>
     </Section>
-  );
+  ); 
 };
 
 export default AboutSection;
+ 
