@@ -61,7 +61,7 @@ const SkillsSection: React.FC = () => {
 
   return (
     <Section id="skills" className="relative" bgType="purple-green">
-      <div className="relative flex flex-col pl-20 pr-10 py-20 w-full min-h-screen z-10">
+      <div className="relative flex flex-col pl-20 pr-10 pt-32 pb-20 w-full min-h-screen z-10">
         <div>
           <h2
             className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${

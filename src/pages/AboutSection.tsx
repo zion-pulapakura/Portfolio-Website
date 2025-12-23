@@ -29,7 +29,7 @@ const AboutSection: React.FC = () => {
   return (
     <Section id="about" className="relative" bgType="purple-green">
       <div className="relative flex flex-row w-full min-h-screen">
-        <div className="w-full relative flex flex-col pl-20 pr-10 py-20 z-10">
+        <div className="w-full relative flex flex-col pl-20 pr-10 pt-32 pb-20 z-10">
           <div>
             <h2
               className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
@@ -77,14 +77,13 @@ const AboutSection: React.FC = () => {
               I enjoy mastering diverse parts of the stack, whether that's
               working deeply with Python for AI and computer vision, leveraging
               full-stack technologies, or navigating cloud infrastructure to
-              deploy scalable solutions. 
+              deploy scalable solutions.
             </p>
           </div>
         </div>
       </div>
     </Section>
-  ); 
+  );
 };
 
 export default AboutSection;
- 
