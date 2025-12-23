@@ -29,12 +29,8 @@
   ],
   "infra": ["AWS", "Docker", "CI/CD", "Git", "AWS"],
   "tools": [
-    "VS Code",
     "Postman",
     "Figma",
-    "Jira",
-    "Confluence",
-    "Slack",
     "GitHub",
     "Notion"
   ]

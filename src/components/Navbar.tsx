@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-
-interface NavItem {
-  id: string;
-  label: string;
-}
+import { setupScrollListener, scrollTo } from "../utils/scrollTo";
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("landing");
-  const navItems: NavItem[] = [
+  const navItems = [
     { id: "landing", label: "Home" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
@@ -16,43 +12,31 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const sections = navItems.map((item) => item.id);
-    const navHeight = 80; // Approximate navbar height
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + navHeight + 50;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    return setupScrollListener(sections, setActiveSection);
   }, []);
 
   const handleNavClick = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const navHeight = 80; // Approximate navbar height
-      const sectionPosition = section.offsetTop - navHeight;
-      window.scrollTo({
-        top: sectionPosition,
-        behavior: "smooth",
-      });
-    }
+    scrollTo(sectionId);
   };
+
+  // Determine color scheme based on active section
+  const isProjectsOrAbout =
+    activeSection === "projects" || activeSection === "about";
+  const logoColor = isProjectsOrAbout
+    ? "text-purple-primary"
+    : "text-green-accent";
+  const activeNavColor = isProjectsOrAbout
+    ? "text-green-accent"
+    : "text-purple-primary";
+  const activeNavBg = isProjectsOrAbout
+    ? "bg-green-accent"
+    : "bg-purple-primary";
 
   return (
     <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 z-50">
       {/* Logo on the left */}
       <div
-        className="pl-20 font-logo text-green-accent text-3xl font-bold cursor-pointer animate-fade-in"
+        className={`pl-20 font-logo ${logoColor} text-3xl font-bold cursor-pointer animate-fade-in transition-colors duration-300`}
         style={{ animationDelay: "0.1s", opacity: 0 }}
         onClick={() => handleNavClick("landing")}
       >
@@ -66,14 +50,14 @@ const Navbar: React.FC = () => {
             key={item.id}
             onClick={() => handleNavClick(item.id)}
             className={`relative px-4 py-2 text-lg font-semibold transition-all duration-300 ${
-              activeSection === item.id
-                ? "text-green-accent"
-                : "text-text-primary opacity-70 hover:opacity-100"
+              activeSection === item.id ? activeNavColor : "text-gray-800"
             }`}
           >
             {item.label}
             {activeSection === item.id && (
-              <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-green-accent animate-fade-in"></span>
+              <span
+                className={`absolute -bottom-0.5 left-0 right-0 h-0.5 ${activeNavBg} animate-fade-in`}
+              ></span>
             )}
           </button>
         ))}

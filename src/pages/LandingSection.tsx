@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "../components/Section";
-import Navbar from "../components/Navbar";
 
 const LandingSection: React.FC = () => {
   return (
@@ -9,8 +8,6 @@ const LandingSection: React.FC = () => {
       className="flex flex-row relative"
       bgType="purple-green"
     >
-      <Navbar />
-
       <div className="w-2/3 relative flex flex-col justify-center pl-20 pr-10 z-10">
         <div className="flex flex-col">
           <h1
