@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../components/Section";
-import SocialLinks from "../components/SocialLinks";
+import Navbar from "../components/Navbar";
 
 const LandingSection: React.FC = () => {
   return (
@@ -9,15 +9,9 @@ const LandingSection: React.FC = () => {
       className="flex flex-row relative"
       bgType="purple-green"
     >
-      <div className="w-2/3 relative flex flex-col justify-center pl-20 pr-10 z-10">
-     
-        <h2
-          className="absolute top-10 left-20 font-logo text-green-accent text-3xl font-bold z-20 animate-fade-in"
-          style={{ animationDelay: "0.1s", opacity: 0 }}
-        >
-          zion pulapakura
-        </h2>
+      <Navbar />
 
+      <div className="w-2/3 relative flex flex-col justify-center pl-20 pr-10 z-10">
         <div className="flex flex-col">
           <h1
             className="text-green-accent text-9xl font-bold leading-tight animate-fade-in-up"
@@ -35,9 +29,7 @@ const LandingSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-1/3 relative flex items-center justify-center z-10">
-        <SocialLinks animationDelay="0.3s" />
-      </div>
+      <div className="w-1/3 relative flex items-center justify-center z-10"></div>
 
       <div
         className="absolute top-1/2 left-2/3 -translate-y-1/2 -translate-x-1/2 z-20 animate-fade-in"
