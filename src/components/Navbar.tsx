@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { setupScrollListener, scrollTo } from "../utils/scrollTo";
+import { scrollTo } from "../utils/scrollTo";
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("landing");
@@ -9,11 +9,6 @@ const Navbar: React.FC = () => {
     { id: "skills", label: "Skills" },
     { id: "about", label: "About" },
   ];
-
-  useEffect(() => {
-    const sections = navItems.map((item) => item.id);
-    return setupScrollListener(sections, setActiveSection);
-  }, []);
 
   const handleNavClick = (sectionId: string) => {
     scrollTo(sectionId);
