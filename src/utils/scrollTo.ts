@@ -3,7 +3,7 @@ export const scrollTo = (sectionId: string): void => {
   if (!section) return;
 
   const NAVBAR_HEIGHT = 80;
-  const sectionPosition = sectionId === "landing" ? 0 : section.offsetTop - NAVBAR_HEIGHT;
+  const sectionPosition = sectionId === "landing" ? 0 : section.offsetTop;
   
   window.scrollTo({
     top: sectionPosition,

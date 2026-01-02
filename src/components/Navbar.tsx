@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { scrollTo } from "../utils/scrollTo";
+import useCurrentSection from "../store/currentSectionStore";
 
 const Navbar: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>("landing");
+  const currentSection = useCurrentSection((state) => state.currentSection);
   const navItems = [
     { id: "landing", label: "Home" },
     { id: "projects", label: "Projects" },
@@ -16,7 +17,7 @@ const Navbar: React.FC = () => {
 
   // Determine color scheme based on active section
   const isProjectsOrAbout =
-    activeSection === "projects" || activeSection === "about";
+    currentSection === "projects" || currentSection === "about";
   const logoColor = isProjectsOrAbout
     ? "text-purple-primary"
     : "text-green-accent";
@@ -45,11 +46,11 @@ const Navbar: React.FC = () => {
             key={item.id}
             onClick={() => handleNavClick(item.id)}
             className={`relative px-4 py-2 text-lg font-semibold transition-all duration-300 ${
-              activeSection === item.id ? activeNavColor : "text-gray-800"
+              currentSection === item.id ? activeNavColor : "text-gray-800"
             }`}
           >
             {item.label}
-            {activeSection === item.id && (
+            {currentSection === item.id && (
               <span
                 className={`absolute -bottom-0.5 left-0 right-0 h-0.5 ${activeNavBg} animate-fade-in`}
               ></span>
