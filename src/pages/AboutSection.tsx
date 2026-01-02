@@ -1,30 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Section from "../components/Section";
+import { useSectionVisibility } from "../hooks/useSectionVisibility";
 
 const AboutSection: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = document.getElementById("about");
-    if (section) {
-      observer.observe(section);
-    }
-
-    return () => {
-      if (section) {
-        observer.unobserve(section);
-      }
-    };
-  }, []);
+  const isVisible = useSectionVisibility("about");
 
   return (
     <Section id="about" className="relative" bgType="green-purple">

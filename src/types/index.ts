@@ -21,10 +21,3 @@ export interface IconProps {
   className?: string;
 }
 
-export interface Certification {
-  title: string;
-  issuer: string;
-  date: string;
-  image: string;
-  description?: string;
-}

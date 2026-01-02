@@ -1,34 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Section from "../components/Section";
 import ProjectsCarousel from "../components/ProjectsCarousel";
 import projectsData from "../data/projects.json";
 import { Project } from "../types";
+import { useSectionVisibility } from "../hooks/useSectionVisibility";
 
 const ProjectsSection: React.FC = () => {
   const projects = projectsData.projects as Project[];
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = document.getElementById("projects");
-    if (section) {
-      observer.observe(section);
-    }
-
-    return () => {
-      if (section) {
-        observer.unobserve(section);
-      }
-    };
-  }, []);
+  const isVisible = useSectionVisibility("projects");
 
   const getImageUrl = (imagePath: string) => {
     return imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
