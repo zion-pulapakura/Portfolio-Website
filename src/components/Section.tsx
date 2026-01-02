@@ -1,5 +1,5 @@
 import React from "react";
-import { getColor, BackgroundType } from "../utils/getColor";
+import useColourStore, { BackgroundType } from "../store/colourStore";
 
 interface SectionProps {
   id: string;
@@ -14,7 +14,11 @@ const Section: React.FC<SectionProps> = ({
   className = "",
   bgType,
 }) => {
-  const { background, leftSideColor, rightSideColor } = getColor(bgType);
+  const getBgColours = useColourStore((state) => state.getBgColours);
+  const background = getBgColours(bgType);
+  
+  const getDesignColours = useColourStore((state) => state.getDesignColours);
+  const { leftSideColor, rightSideColor } = getDesignColours(bgType);
 
   return (
     <section
