@@ -1,9 +1,13 @@
 import React from "react";
 import { scrollTo } from "../utils/scrollTo";
 import useCurrentSection from "../store/currentSectionStore";
+import useColourStore, { BackgroundType } from "../store/colourStore";
 
 const Navbar: React.FC = () => {
   const currentSection = useCurrentSection((state) => state.currentSection);
+  const getNavbarColours = useColourStore((state) => state.getNavbarColours);
+  const getBgColours = useColourStore((state) => state.getBgColours);
+
   const navItems = [
     { id: "landing", label: "Home" },
     { id: "projects", label: "Projects" },
@@ -11,30 +15,29 @@ const Navbar: React.FC = () => {
     { id: "about", label: "About" },
   ];
 
-  const handleNavClick = (sectionId: string) => {
-    scrollTo(sectionId);
+  // Map section ID to bgType
+  const sectionToBgType: Record<string, BackgroundType> = {
+    landing: "purple-green",
+    projects: "green-purple",
+    skills: "purple-green",
+    about: "green-purple",
   };
 
-  // Determine color scheme based on active section
-  const isProjectsOrAbout =
-    currentSection === "projects" || currentSection === "about";
-  const logoColor = isProjectsOrAbout
-    ? "text-purple-primary"
-    : "text-green-accent";
-  const activeNavColor = isProjectsOrAbout
-    ? "text-green-accent"
-    : "text-purple-primary";
-  const activeNavBg = isProjectsOrAbout
-    ? "bg-green-accent"
-    : "bg-purple-primary";
+  const bgType = sectionToBgType[currentSection] || "purple-green";
+  const { logoColour, activeNavColour, activeNavBg, inactiveNavColour } =
+    getNavbarColours(bgType);
+  const background = getBgColours(bgType);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 z-50">
+    <nav
+      className="fixed top-0 left-0 right-0 flex items-center justify-between py-4 z-50 transition-all duration-300"
+      style={{ background }}
+    >
       {/* Logo on the left */}
       <div
-        className={`pl-20 font-logo ${logoColor} text-3xl font-bold cursor-pointer animate-fade-in transition-colors duration-300`}
+        className={`pl-20 font-logo ${logoColour} text-3xl font-bold cursor-pointer animate-fade-in transition-colors duration-300`}
         style={{ animationDelay: "0.1s", opacity: 0 }}
-        onClick={() => handleNavClick("landing")}
+        onClick={() => scrollTo("landing")}
       >
         zion pulapakura
       </div>
@@ -44,9 +47,9 @@ const Navbar: React.FC = () => {
         {navItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => handleNavClick(item.id)}
+            onClick={() => scrollTo(item.id)}
             className={`relative px-4 py-2 text-lg font-semibold transition-all duration-300 ${
-              currentSection === item.id ? activeNavColor : "text-gray-800"
+              currentSection === item.id ? activeNavColour : inactiveNavColour
             }`}
           >
             {item.label}
