@@ -20,19 +20,19 @@ const ContactCard: React.FC<ContactCardProps> = ({
     {
       name: "LinkedIn",
       icon: FaLinkedin,
-      url: "https://linkedin.com/in/zion-pulapakura",
+      url: "https://www.linkedin.com/in/zion-pulapakura-2343ba34a/",
       color: "text-blue-600",
     },
     {
       name: "YouTube",
       icon: FaYoutube,
-      url: "https://youtube.com/@zion-pulapakura",
+      url: "https://www.youtube.com/@zionpnz",
       color: "text-red-600",
     },
     {
       name: "Medium",
       icon: FaMedium,
-      url: "https://medium.com/@zion-pulapakura",
+      url: "https://medium.com/@pulapakurazion",
       color: "text-gray-800",
     },
   ];
