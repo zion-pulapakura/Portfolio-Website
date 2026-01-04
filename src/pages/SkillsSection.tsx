@@ -51,8 +51,8 @@ const SkillsSection: React.FC = () => {
               CERTS
             </span>
             <span
-              className={`absolute -bottom-2 w-1/3 h-1 bg-green-accent ${
-                activeTab === "skills" ? "left-0" : "right-0"
+              className={`absolute -bottom-2 w-1/3 h-1 bg-green-accent transition-all duration-300 ease-in-out ${
+                activeTab === "skills" ? "left-0" : "left-[66.666667%]"
               }`}
             ></span>
           </h2>
