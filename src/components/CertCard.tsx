@@ -27,17 +27,15 @@ const CertCard: React.FC<CertCardProps> = ({
     >
       <div className="p-6 flex flex-row gap-4 relative">
         {/* Link in top right */}
-        {certification.link && (
-          <a
-            href={certification.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity z-10"
-            aria-label={`View ${certification.title} certificate`}
-          >
-            <FaArrowUpRightFromSquare className="w-5 h-5 text-gray-800" />
-          </a>
-        )}
+        <a
+          href={certification.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity z-10"
+          aria-label={`View ${certification.title} certificate`}
+        >
+          <FaArrowUpRightFromSquare className="w-5 h-5 text-gray-800" />
+        </a>
 
         {/* Cert image in top left */}
         <div className="flex-shrink-0">
