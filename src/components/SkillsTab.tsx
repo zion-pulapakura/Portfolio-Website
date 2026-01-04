@@ -6,11 +6,12 @@ interface SkillsTabProps {
     title: string;
     skills: string[];
   }>;
-  isVisible: boolean;
 }
 
-const SkillsTab: React.FC<SkillsTabProps> = ({ skillCategories, isVisible }) => {
-  const [activeCategory, setActiveCategory] = useState<string>(skillCategories[0]?.title || "");
+const SkillsTab: React.FC<SkillsTabProps> = ({ skillCategories }) => {
+  const [activeCategory, setActiveCategory] = useState<string>(
+    skillCategories[0]?.title || ""
+  );
 
   return (
     <div className="flex flex-col">
@@ -47,4 +48,3 @@ const SkillsTab: React.FC<SkillsTabProps> = ({ skillCategories, isVisible }) => 
 };
 
 export default SkillsTab;
-

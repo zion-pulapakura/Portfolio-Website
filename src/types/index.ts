@@ -28,4 +28,5 @@ export interface Certification {
   image: string;
   description: string;
   summary?: string;
+  link?: string;
 }

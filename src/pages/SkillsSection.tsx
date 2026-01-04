@@ -50,7 +50,11 @@ const SkillsSection: React.FC = () => {
             >
               CERTS
             </span>
-            <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-green-accent"></span>
+            <span
+              className={`absolute -bottom-2 w-1/3 h-1 bg-green-accent ${
+                activeTab === "skills" ? "left-0" : "right-0"
+              }`}
+            ></span>
           </h2>
         </div>
 
@@ -59,10 +63,7 @@ const SkillsSection: React.FC = () => {
           style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
         >
           {activeTab === "skills" ? (
-            <SkillsTab
-              skillCategories={skillCategories}
-              isVisible={isVisible}
-            />
+            <SkillsTab skillCategories={skillCategories} />
           ) : (
             <CertificationsTab
               certifications={certifications}

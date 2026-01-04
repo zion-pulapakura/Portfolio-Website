@@ -5,14 +5,17 @@
       "issuer": "Amazon Web Services",
       "date": "July 2024",
       "image": "/images/aws-cert.png",
+      "link": "https://cp.certmetrics.com/amazon/en/public/verify/credential/b9f203a03ae44cdb9225abc2af8da278",
       "description": "Foundational cloud knowledge and AWS services",
-      "summary":"When I entered my school's term 2 break, I decided to delve into a cloud service, as I had never used one before. I chose AWS, and completed the AWS Certified AI Practitioner certification, and gained a foundational understanding of AWS services and cloud computing principles. This certification was a great introduction into AWS and the cloud in general."
+      "summary": "When I entered my school's term 2 break, I decided to delve into a cloud service, as I had never used one before. I chose AWS, and completed the AWS Certified AI Practitioner certification, and gained a foundational understanding of AWS services and cloud computing principles. This certification was a great introduction into AWS and the cloud in general."
     },
     {
       "title": "IBM AI Engineering",
       "issuer": "IBM",
       "date": "October 2024",
       "image": "/images/ibm-cert.png",
+      "link": "https://www.coursera.org/account/accomplishments/specialization/2M38L3GEB5FD",
+
       "description": "Machine learning and deep learning fundamentals",
       "summary": "As the end of 2024 drew closer, I realised that although I had a good understanding of AI and machine learning, I didn't have a deep understanding of the underlying principles and technologies. So, in my school's term 3 break, I decided to complete the IBM AI Engineering certification, and gain deeper insight into how machine and deep learning really functions."
     }
