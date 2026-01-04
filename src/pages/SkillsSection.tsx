@@ -1,28 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Section from "../components/Section";
-import SkillBox from "../components/SkillBox";
 import skillsData from "../data/skills.json";
+import certificationsData from "../data/certifications.json";
 import { useSectionVisibility } from "../hooks/useSectionVisibility";
-
-function getEmojiForCategory(category: string): string {
-  const emojiMap: Record<string, string> = {
-    "AI & ML": "🤖",
-    fullstack: "💻",
-    infra: "⚙️",
-    tools: "🛠️",
-  };
-  return emojiMap[category] || "📚";
-}
+import SkillsTab from "../components/SkillsTab";
+import CertificationsTab from "../components/CertificationsTab";
+import { Certification } from "../types";
 
 const SkillsSection: React.FC = () => {
   const isVisible = useSectionVisibility("skills");
+  const [activeTab, setActiveTab] = useState<"skills" | "certs">("skills");
 
   // Convert skills object to array format
   const skillCategories = Object.entries(skillsData).map(([title, skills]) => ({
     title,
     skills: skills as string[],
-    emoji: getEmojiForCategory(title),
   }));
+
+  const certifications = certificationsData.certifications as Certification[];
 
   return (
     <Section id="skills" className="relative" bgType="purple-green">
@@ -34,25 +29,46 @@ const SkillsSection: React.FC = () => {
             }`}
             style={{ animationDelay: "0s", opacity: isVisible ? 1 : 0 }}
           >
-            SKILLS
+            <span
+              className={`cursor-pointer transition-colors ${
+                activeTab === "skills"
+                  ? "text-green-accent"
+                  : "text-text-primary"
+              }`}
+              onClick={() => setActiveTab("skills")}
+            >
+              SKILLS
+            </span>
+            <span className="mx-2">/</span>
+            <span
+              className={`cursor-pointer transition-colors ${
+                activeTab === "certs"
+                  ? "text-green-accent"
+                  : "text-text-primary"
+              }`}
+              onClick={() => setActiveTab("certs")}
+            >
+              CERTS
+            </span>
             <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-green-accent"></span>
           </h2>
         </div>
 
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${
-            isVisible ? "animate-fade-in" : ""
-          }`}
+          className={isVisible ? "animate-fade-in" : ""}
           style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
         >
-          {skillCategories.map((category) => (
-            <SkillBox
-              key={category.title}
-              title={category.title}
-              skills={category.skills}
-              emoji={category.emoji}
+          {activeTab === "skills" ? (
+            <SkillsTab
+              skillCategories={skillCategories}
+              isVisible={isVisible}
             />
-          ))}
+          ) : (
+            <CertificationsTab
+              certifications={certifications}
+              isVisible={isVisible}
+            />
+          )}
         </div>
       </div>
     </Section>
