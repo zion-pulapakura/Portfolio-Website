@@ -27,4 +27,5 @@ export interface Certification {
   date: string;
   image: string;
   description: string;
+  summary?: string;
 }

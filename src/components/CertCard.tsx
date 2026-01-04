@@ -16,7 +16,7 @@ const CertCard: React.FC<CertCardProps> = ({
 }) => {
   return (
     <div
-      className={`relative group ${className} ${
+      className={`bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 shadow-sm ${className} ${
         isVisible ? "animate-fade-in-up" : ""
       }`}
       style={{
@@ -24,30 +24,35 @@ const CertCard: React.FC<CertCardProps> = ({
         opacity: isVisible ? 1 : 0,
       }}
     >
-      <div className="relative bg-white rounded-lg p-3 md:p-4 shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl border-2 border-white/20 max-w-sm">
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-green-accent/20 to-purple-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10"></div>
+      <div className="p-6 flex flex-row gap-4">
+        {/* Cert image in top left */}
+        <div className="flex-shrink-0">
+          <img
+            src={certification.image}
+            alt={certification.title}
+            className="w-48 h-auto object-contain"
+          />
+        </div>
 
-        <img
-          src={certification.image}
-          alt={certification.title}
-          className="w-full h-auto relative z-10"
-        />
+        {/* Title and description to the right of image */}
+        <div className="flex flex-col flex-grow">
+          <h3 className="text-white text-xl font-bold mb-2">
+            {certification.title}
+          </h3>
+          <p className="text-text-primary text-sm">
+            {certification.description}
+          </p>
+        </div>
       </div>
 
-      {/* Text content below the image */}
-      <div className="mt-3 space-y-1">
-        <h3 className="text-white text-base font-bold">{certification.title}</h3>
-        <p className="text-text-primary text-xs">{certification.issuer}</p>
-        <div className="flex items-center justify-between">
-          <p className="text-text-primary text-xs opacity-75">
-            {certification.date}
-          </p>
-          {certification.description && (
-            <p className="text-text-primary text-xs italic max-w-[60%] text-right">
-              {certification.description}
-            </p>
-          )}
-        </div>
+      {/* Summary underneath */}
+      <div className="px-6 pb-6 flex flex-col flex-grow min-h-[120px]">
+        <p className="text-text-primary text-sm flex-grow">
+          {certification.summary}
+        </p>
+        <p className="text-text-primary text-xs opacity-75 mt-auto text-right">
+          issued at {certification.date} by {certification.issuer}
+        </p>
       </div>
     </div>
   );
