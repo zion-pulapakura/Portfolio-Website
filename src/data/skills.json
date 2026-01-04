@@ -4,28 +4,32 @@
     "TensorFlow",
     "PyTorch",
     "Scikit-learn",
+    "Generative AI",
     "OpenAI API",
     "LangChain",
     "Hugging Face",
     "NLP",
     "LLMs",
     "GenAI",
-    "Mediapipe"
+    "Mediapipe",
+    "Computer Vision",
+    "Retrieval Augmented Generation"
   ],
   "fullstack": [
     "React",
     "TypeScript",
     "JavaScript",
     "Node.js",
-    "Express",
+    "Express.js",
     "MongoDB",
     "REST APIs",
-    "Vite",
+    "Vite.js",
     "Material UI",
     "Tailwind CSS",
     "Zustand",
     "HTML",
-    "CSS"
+    "CSS",
+    "SCSS"
   ],
   "infra": ["AWS", "Docker", "CI/CD", "Git", "AWS"],
   "tools": [

@@ -21,7 +21,7 @@ const SkillsSection: React.FC = () => {
 
   return (
     <Section id="skills" className="relative" bgType="purple-green">
-      <div className="relative flex flex-col pl-20 pr-10 pt-32 pb-20 w-full min-h-screen z-10">
+      <div className="relative flex flex-col pl-20 pr-10 pt-32 pb-20 w-full min-h-screen z-10 ">
         <div>
           <h2
             className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
@@ -60,7 +60,8 @@ const SkillsSection: React.FC = () => {
 
         <div
           className={isVisible ? "animate-fade-in" : ""}
-          style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+        
+          style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0}}
         >
           {activeTab === "skills" ? (
             <SkillsTab skillCategories={skillCategories} />
