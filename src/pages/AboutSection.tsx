@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "../components/Section";
 import { useSectionVisibility } from "../hooks/useSectionVisibility";
+import ContactCard from "../components/ContactCard";
 
 const AboutSection: React.FC = () => {
   const isVisible = useSectionVisibility("about");
@@ -11,19 +12,19 @@ const AboutSection: React.FC = () => {
         <div className="w-full relative flex flex-col pl-20 pr-10 pt-32 pb-20 z-10">
           <div>
             <h2
-              className={`text-green-accent text-5xl font-bold mb-8 relative inline-block ${
-                isVisible ? "animate-fade-in-up" : ""
+              className={`text-purple-primary text-5xl font-bold mb-8 relative inline-block ${
+                isVisible ? "animate-slide-in-down" : ""
               }`}
-              style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+              style={{ animationDelay: "0s" }}
             >
               ABOUT ME
-              <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-green-accent"></span>
+              <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-purple-primary"></span>
             </h2>
           </div>
 
-          <div className="flex flex-col max-w-3xl">
+          <div className="flex flex-col" style={{ maxWidth: "60%" }}>
             <p
-              className={`text-text-primary text-xl leading-relaxed mb-4 ${
+              className={`text-gray-800 text-xl leading-relaxed mb-4 ${
                 isVisible ? "animate-fade-in-up" : ""
               }`}
               style={{ animationDelay: "0.2s", opacity: isVisible ? 1 : 0 }}
@@ -35,7 +36,7 @@ const AboutSection: React.FC = () => {
               real-world problems and explore new creative possibilities.
             </p>
             <p
-              className={`text-text-primary text-xl leading-relaxed mb-4 ${
+              className={`text-gray-800 text-xl leading-relaxed mb-4 ${
                 isVisible ? "animate-fade-in-up" : ""
               }`}
               style={{ animationDelay: "0.3s", opacity: isVisible ? 1 : 0 }}
@@ -48,7 +49,15 @@ const AboutSection: React.FC = () => {
               gestures.
             </p>
             <p
-              className={`text-text-primary text-xl leading-relaxed ${
+              className={`text-gray-800 text-xl leading-relaxed mb-4 ${
+                isVisible ? "animate-fade-in-up" : ""
+              }`}
+              style={{ animationDelay: "0.3s", opacity: isVisible ? 1 : 0 }}
+            >
+              Now I'm 16, and I still love experimenting and building with AI. I dropped out of school at the end of my Year 10 (2025) to focus on building my AI engineering career.
+            </p>
+            <p
+              className={`text-gray-800 text-xl leading-relaxed ${
                 isVisible ? "animate-fade-in-up" : ""
               }`}
               style={{ animationDelay: "0.4s", opacity: isVisible ? 1 : 0 }}
@@ -59,6 +68,14 @@ const AboutSection: React.FC = () => {
               deploy scalable solutions.
             </p>
           </div>
+        </div>
+
+        {/* Contact Card in purple section */}
+        <div
+          className="absolute right-20 top-1/2 -translate-y-1/2 z-10"
+          style={{ width: "400px" }}
+        >
+          <ContactCard isVisible={isVisible} animationDelay={0.5} />
         </div>
       </div>
     </Section>

@@ -17,11 +17,11 @@ const LandingSection: React.FC = () => {
             AI ENGINEER.
           </h1>
           <p
-            className="text-text-primary text-2xl mt-4 max-w-2xl animate-fade-in-up"
+            className="text-text-primary text-2xl mt-4 max-w-3xl animate-fade-in-up"
             style={{ animationDelay: "0.4s", opacity: 0 }}
           >
-            Curious by nature, I explore AI through building—each project
-            teaches me something new.
+            A 16 year old AI and software engineer based in Melbourne,
+            Australia, who loves experimenting and building with AI.
           </p>
         </div>
       </div>
