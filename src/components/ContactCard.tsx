@@ -40,11 +40,11 @@ const ContactCard: React.FC<ContactCardProps> = ({
   return (
     <div
       className={`bg-card-dark rounded-xl overflow-hidden flex flex-col border border-gray-600 shadow-sm ${
-        isVisible ? "animate-fade-in-up" : ""
+        isVisible ? "animate-fade-in" : ""
       }`}
       style={{
         animationDelay: `${animationDelay}s`,
-        opacity: isVisible ? 1 : 0,
+        opacity: isVisible ? 0 : 0,
       }}
     >
       <div className="p-6 flex flex-col">

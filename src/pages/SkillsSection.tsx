@@ -60,7 +60,7 @@ const SkillsSection: React.FC = () => {
 
         <div
           className={isVisible ? "animate-fade-in" : ""}
-          style={{ animationDelay: "0.1s", opacity: isVisible ? 1 : 0 }}
+          style={{ animationDelay: "0.8s", opacity: isVisible ? 0 : 0 }}
         >
           {activeTab === "skills" ? (
             <SkillsTab skillCategories={skillCategories} />

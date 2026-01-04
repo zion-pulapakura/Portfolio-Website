@@ -25,9 +25,9 @@ const AboutSection: React.FC = () => {
           <div className="flex flex-col" style={{ maxWidth: "60%" }}>
             <p
               className={`text-gray-800 text-xl leading-relaxed mb-4 ${
-                isVisible ? "animate-fade-in-up" : ""
+                isVisible ? "animate-slide-in-left" : ""
               }`}
-              style={{ animationDelay: "0.2s", opacity: isVisible ? 1 : 0 }}
+              style={{ animationDelay: "0.8s", opacity: 0 }}
             >
               I'm Zion Pulapakura, an AI and software engineer based in
               Melbourne, Australia. I'm passionate about building intelligent,
@@ -37,9 +37,9 @@ const AboutSection: React.FC = () => {
             </p>
             <p
               className={`text-gray-800 text-xl leading-relaxed mb-4 ${
-                isVisible ? "animate-fade-in-up" : ""
+                isVisible ? "animate-slide-in-left" : ""
               }`}
-              style={{ animationDelay: "0.3s", opacity: isVisible ? 1 : 0 }}
+              style={{ animationDelay: "0.9s", opacity: 0 }}
             >
               My journey in technology started when I was 12, when I first got
               into Python and Javascript. This came from a drive to make ideas
@@ -50,17 +50,19 @@ const AboutSection: React.FC = () => {
             </p>
             <p
               className={`text-gray-800 text-xl leading-relaxed mb-4 ${
-                isVisible ? "animate-fade-in-up" : ""
+                isVisible ? "animate-slide-in-left" : ""
               }`}
-              style={{ animationDelay: "0.3s", opacity: isVisible ? 1 : 0 }}
+              style={{ animationDelay: "1.0s", opacity: 0 }}
             >
-              Now I'm 16, and I still love experimenting and building with AI. I dropped out of school at the end of my Year 10 (2025) to focus on building my AI engineering career.
+              Now I'm 16, and I still love experimenting and building with AI. I
+              dropped out of school at the end of my Year 10 (2025) to focus on
+              building my AI engineering career.
             </p>
             <p
               className={`text-gray-800 text-xl leading-relaxed ${
-                isVisible ? "animate-fade-in-up" : ""
+                isVisible ? "animate-slide-in-left" : ""
               }`}
-              style={{ animationDelay: "0.4s", opacity: isVisible ? 1 : 0 }}
+              style={{ animationDelay: "1.1s", opacity: 0 }}
             >
               I enjoy mastering diverse parts of the stack, whether that's
               working deeply with Python for AI and computer vision, leveraging
@@ -75,7 +77,7 @@ const AboutSection: React.FC = () => {
           className="absolute right-20 top-1/2 -translate-y-1/2 z-10"
           style={{ width: "400px" }}
         >
-          <ContactCard isVisible={isVisible} animationDelay={0.5} />
+          <ContactCard isVisible={isVisible} animationDelay={1.9} />
         </div>
       </div>
     </Section>
